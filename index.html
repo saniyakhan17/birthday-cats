@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Corner Image Animation</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background-color: black;
+            overflow: hidden;
+        }
+
+        .img {
+            position: absolute;
+            width: 300px;
+            opacity: 0;
+            animation-duration: 1.5s;
+            animation-fill-mode: forwards;
+        }
+
+        /* Image coming from top-left */
+        .img1 {
+            top: -200px;
+            left: -200px;
+            animation-name: fromTopLeft;
+        }
+
+        /* Image coming from bottom-right */
+        .img2 {
+            bottom: -200px;
+            right: -200px;
+            animation-name: fromBottomRight;
+            animation-delay: 0.3s;
+        }
+
+        @keyframes fromTopLeft {
+            to {
+                top: 50px;
+                left: 50px;
+                opacity: 1;
+            }
+        }
+
+        @keyframes fromBottomRight {
+            to {
+                bottom: 50px;
+                right: 50px;
+                opacity: 1;
+            }
+        }
+        .birthday-text {
+    position: absolute;
+    top: 50%;
+    left: -50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 42px;   /* smaller final size */
+    font-family: 'Comic Sans MS', cursive;
+    opacity: 0;
+    animation: slideToCenter 1.5s ease forwards;
+    animation-delay: 1.2s;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+@keyframes slideToCenter {
+    to {
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+}
+
+
+    </style>
+</head>
+<div class="birthday-text">Happy Birthday 🎉🎂</div>
+
+<body>
+
+    <img src="image1.png" class="img img1">
+    <img src="image2.png" class="img img2">
+
+</body>
+</html>
